@@ -8,7 +8,7 @@
 */
 
 
-/*Counter*/
+/*Animatedcounter*/
 
 * {
     box-sizing: border-box;
@@ -38,7 +38,7 @@ body {
     padding: 40px 20px;
 }
 
-.counter{
+.animatedCounter{
 	font-size: 40px;
 	padding: 50px;
 	color:grey;
