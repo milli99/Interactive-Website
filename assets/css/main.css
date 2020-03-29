@@ -2497,14 +2497,14 @@ input[type="radio"] + label:before {
 
 body,
 #slider,
-.wrap {
+.imageSlider {
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden;
 }
 
-.wrap {
+.imageSlider {
   position: relative;
 }
 

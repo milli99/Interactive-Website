@@ -1,26 +1,28 @@
 // H2 Textanimation
 const text = document.querySelector(".textanimation");
-const strText = text.textContent;
-const splitText = strText.split("");
-text.textContent = "";
+const content = text.innerText;
+const splitText = content.split("");
+text.innerText = "";
 
 for (let i = 0; i < splitText.length; i++) {
   text.innerHTML += "<span>" + splitText[i] + "</span>";
 }
 
-let char = 0;
-let timer = setInterval(onTick, 180);
+let a = 0;
+let timer = setInterval(animation, 180);
 
-function onTick() {
-  const span = text.querySelectorAll("span")[char];
+function animation() {
+  const span = text.querySelectorAll("span")[a];
   span.classList.add("fade");
-  char++;
-  if (char === splitText.length) {
-    complete();
+  a++;
+
+  if (a === splitText.length) {
+    stop();
     return;
   }
 }
-function complete() {
+
+function stop() {
   clearInterval(timer);
   timer = null;
 }
