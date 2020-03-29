@@ -71,3 +71,30 @@ if (arrowRight) {
   }
 }
 startSlide();
+
+//AJAX
+
+document.querySelector("#button").addEventListener("click", loadEmployees);
+
+function loadEmployees() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://api.github.com/users", true);
+
+  xhr.onload = function() {
+    if (this.status == 200) {
+      var employees = JSON.parse(this.responseText);
+
+      var output = "";
+      for (var i in employees) {
+        output +=
+          '<div class="employees">' +
+          '<img src="' +
+          employees[i].avatar_url +
+          '" width="50" height="50">' +
+          "</div>";
+      }
+      document.querySelector("#employees").innerHTML = output;
+    }
+  };
+  xhr.send();
+}

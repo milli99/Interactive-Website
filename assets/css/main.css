@@ -7,6 +7,20 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 
+/*AJAX*/
+.employees {
+  display: inline-block;
+  margin: 10px;
+}
+#employees {
+  margin-left: 150px;
+  margin-bottom: 70px;
+}
+#button {
+  margin-bottom: 30px;
+  margin-left: 150px;
+}
+
 /*Animatedcounter*/
 
 * {
