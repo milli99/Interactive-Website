@@ -77,15 +77,15 @@ startSlide();
 document.querySelector("#button").addEventListener("click", loadEmployees);
 
 function loadEmployees() {
-  var xhr = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   xhr.open("GET", "https://api.github.com/users", true);
 
   xhr.onload = function() {
     if (this.status == 200) {
-      var employees = JSON.parse(this.responseText);
+      let employees = JSON.parse(this.responseText);
 
-      var output = "";
-      for (var i in employees) {
+      let output = "";
+      for (let i in employees) {
         output +=
           '<div class="employees">' +
           '<img src="' +

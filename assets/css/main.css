@@ -7,6 +7,10 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 
+#ballAnimation {
+  background-color: grey;
+}
+
 /*AJAX*/
 .employees {
   display: inline-block;
@@ -3051,6 +3055,7 @@ span {
   transform: translateY(-50px);
   display: inline-block;
 }
+
 span.fade {
   opacity: 1;
   transform: translateY(0px);
