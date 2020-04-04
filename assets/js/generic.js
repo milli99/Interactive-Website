@@ -1,19 +1,18 @@
 //Counter
 const animatedCounter = document.querySelectorAll(".animatedCounter");
-const speed = 200;
+const tempo = 200;
 
 animatedCounter.forEach(animatedCounter => {
-  const updateCount = () => {
-    const target = +animatedCounter.getAttribute("data-target");
+  const updateCount = function() {
+    const dataTarget = +animatedCounter.getAttribute("data-target");
     const count = +animatedCounter.innerText;
+    const t = dataTarget / tempo;
 
-    const inc = target / speed;
-
-    if (count < target) {
-      animatedCounter.innerText = count + inc;
-      setTimeout(updateCount, 1);
+    if (count < dataTarget) {
+      animatedCounter.innerText = count + t;
+      setTimeout(updateCount, 20);
     } else {
-      count.innerText = target;
+      count.innerText = dataTarget;
     }
   };
   updateCount();

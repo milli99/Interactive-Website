@@ -28,20 +28,28 @@ function stop() {
 }
 
 //Canvas
-var canvas = document.querySelector("#ballAnimation");
+const canvas = document.querySelector("#ballAnimation");
 canvas.width = window.innerWidth;
 
 if (canvas.getContext) {
-  var ctx = canvas.getContext("2d");
+  const ctx = canvas.getContext("2d");
 
-  var x1 = 100,
+  let x1 = 100,
     y1 = 100,
     r1 = 30,
     vx1 = 2,
     vy1 = 2;
 
-  function createBall() {
+  function clear() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  function createAnimateBall() {
+    clear();
+    ctx.beginPath();
+    ctx.arc(x1, y1, r1, 0, Math.PI * 2);
+    ctx.fillStyle = "#f6f6f6";
+    ctx.fill();
 
     if (y1 > canvas.height - r1 || y1 < r1) {
       vy1 = -vy1;
@@ -52,15 +60,10 @@ if (canvas.getContext) {
 
     x1 += vx1;
     y1 += vy1;
-
-    ctx.beginPath();
-    ctx.arc(x1, y1, r1, 0, Math.PI * 2);
-    ctx.fillStyle = "#f6f6f6";
-    ctx.fill();
-    ctx.stroke();
   }
-  createBall();
-  setInterval(createBall, 15);
+
+  createAnimateBall();
+  setInterval(createAnimateBall, 20);
 } else {
   alert(
     "Dieser Browser unterstützt das <canvas> Element nicht, versuche es mit einem anderen!"
